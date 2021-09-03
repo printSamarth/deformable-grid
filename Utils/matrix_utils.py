@@ -7,7 +7,9 @@ class MatrixUtils:
         self.batch_size = batch_size
         self.grid_size = grid_size
 
+        # number of cells.
         self.point_num = self.grid_size[0] * self.grid_size[1]
+        # number of grids.
         self.grid_num = (self.grid_size[0] - 1) * (self.grid_size[1] - 1) * 2
         self.init_point = dense_quad.create_init_point(self.grid_size[0], self.grid_size[1])
         self.init_point_mask = dense_quad.create_init_point_mask(self.grid_size[0], self.grid_size[1])
@@ -22,6 +24,7 @@ class MatrixUtils:
         self.init_all_edge_ex2 = torch.from_numpy(self.init_all_edge_ex2)
         self.init_edge_adj_nxn = torch.from_numpy(self.init_edge_adj_nxn).float()
 
+        # Sending on GPU or CPU.
         # init_cell_adjacent_my = dense_quad.create_init_cell_adjacent_jun_faster(self.triangle2point)
         self.init_point = self.init_point.unsqueeze(0).expand(self.batch_size, self.init_point.shape[-2], self.init_point.shape[-1]).float().to(device)
         self.init_point_mask = self.init_point_mask.unsqueeze(0).expand(self.batch_size, self.init_point_mask.shape[-2], self.init_point_mask.shape[-1]).float().to(device)
