@@ -34,7 +34,7 @@ def setup_seed(seed):
 setup_seed(1)
 torch.backends.cudnn.benchmark = True
 
-root_path = '/h/jungao/lab-code/deformable-grid-internal'
+root_path = '/content/drive/MyDrive/Data/Code'
 class Trainer(object):
     def __init__(self, args):
 

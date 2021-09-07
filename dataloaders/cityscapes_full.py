@@ -82,8 +82,8 @@ class cityscapesFullLoader(data.Dataset):
         """
         if os.path.exists('/h/zianwang/disk/dataset/cityscapes'):
             self.root = '/h/zianwang/disk/dataset/cityscapes'
-        elif os.path.exists('/scratch/ssd001/home/linghuan/datasets/dataset/cityscapes'):
-            self.root = '/scratch/ssd001/home/linghuan/datasets/dataset/cityscapes'
+        elif os.path.exists('/content/drive/MyDrive/Data'):
+            self.root = '/content/drive/MyDrive/Data'
         else:
             raise ValueError('cityscapes-full data does not exist!')
         self.split = split
